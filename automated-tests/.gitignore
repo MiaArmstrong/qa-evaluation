@@ -1,0 +1,16 @@
+# Ignore CodeceptJS output
+automated-tests/output/
+
+# Node dependencies
+automated-tests/node_modules/
+
+# Environment variables
+automated-tests/.env
+automated-tests/.env.*
+
+# Playwright artifacts (if used)
+automated-tests/test-results/
+automated-tests/.playwright/
+
+# VSCode settings
+automated-tests/.vscode/
