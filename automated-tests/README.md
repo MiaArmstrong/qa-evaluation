@@ -187,4 +187,8 @@ jobs:
 ```
 With this in place, every PR will automatically spin up your mock‑server and app, execute the CodeceptJS/Playwright scenarios, and give you a pass/fail signal (plus rich HTML + screenshots) right in your pull‑request checks.
 
+## QA Metrics Dashboard
+
+A Grafana‑backed dashboard for key test KPIs (pass rate, flake rate, coverage %, PR feedback time). See [QA Metrics Dashboard Design](docs/qa‑metrics‑dashboard.md) for details.
+
 ### That’s it! You now have a simple, network‑aware E2E suite you can run locally or in CI. Happy testing!
