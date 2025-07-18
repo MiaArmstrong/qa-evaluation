@@ -15,8 +15,8 @@ This repository contains end‑to‑end tests for the Coalesce Feature Flags Adm
 
 ## Installation
 
-1. Clone this repo and `cd` into it  
-2. Install dependencies  
+### 1. Clone this repo and `cd` into it  
+### 2. Install dependencies  
 ```bash
    npm install
    # or
@@ -50,7 +50,7 @@ npx codeceptjs run-workers 2
 ```
 ## Key Customizations
 
-1. Custom actor methods (steps_file.ts)
+### 1. Custom actor methods (steps_file.ts)
 ```typescript
 I.goToPage(path, apiEndpoint)
 ```
@@ -62,14 +62,14 @@ Clicks a UI element (or presses Enter) and waits for the matching network call.
 
 These keep our tests in sync with backend requests instead of using fixed timeouts.
 
-2. codecept.conf.ts highlights
-- Playwright helper pointed at http://localhost:5173
+### 2. codecept.conf.ts highlights
+  - Playwright helper pointed at http://localhost:5173
 
-- screenshotOnFail plugin captures a PNG in output/ on every failure
+  - screenshotOnFail plugin captures a PNG in output/ on every failure
 
-- mochawesome reporter configured for HTML/JSON output
+  - mochawesome reporter configured for HTML/JSON output
 
-- Session restart set to "session" so the browser stays open between scenarios
+  - Session restart set to "session" so the browser stays open between scenarios
 
 ## Screenshots & Reporting
 
@@ -81,22 +81,22 @@ These keep our tests in sync with backend requests instead of using fixed timeou
 
 ## You can slot this whole suite into your CI/CD pipeline in just a few steps:
 
-1. Trigger on PRs & Merges
+### 1. Trigger on PRs & Merges
 Configure your pipeline (GitHub Actions, GitLab CI, CircleCI, etc.) to kick off whenever someone opens or updates a pull‑request against main (or merges to main/develop).
 
-2. Install & Build
+### 2. Install & Build
 
-- Install your Node dependencies (npm ci or yarn --frozen-lockfile)
+  - Install your Node dependencies (npm ci or yarn --frozen-lockfile)
 
-- Build your front‑end app (npm run build or npm run dev -- --headless)
+  - Build your front‑end app (npm run build or npm run dev -- --headless)
 
-- Start your mock API (npm run mock-api)
+  - Start your mock API (npm run mock-api)
 
-- Serve your built app (e.g. serve -s dist or npm run preview)
+  - Serve your built app (e.g. serve -s dist or npm run preview)
 
-3. Run E2E Suite
+### 3. Run E2E Suite
 
-- Invoke CodeceptJS in headless mode:
+  - Invoke CodeceptJS in headless mode:
 
 ```bash
 npx codeceptjs run --verbose --reporter mochawesome
@@ -106,23 +106,23 @@ Or for a faster feedback loop, run in parallel workers:
 ```bash
 npx codeceptjs run-workers 5 --verbose --reporter mochawesome
 ```
-4. Publish & Fail‑Fast
+### 4. Publish & Fail‑Fast
 
-- Fail the build if any scenario errors out (exit code ≠ 0)
+  - Fail the build if any scenario errors out (exit code ≠ 0)
 
-- Collect artifacts:
+  - Collect artifacts:
 
-  - Mochawesome JSON/HTML report
+    - Mochawesome JSON/HTML report
 
-  - output/*.png screenshots on failure
+    - output/*.png screenshots on failure
 
-- Optionally upload those to your CI’s artifacts store or attach them to the PR
+  - Optionally upload those to your CI’s artifacts store or attach them to the PR
 
-5. Feedback to Developers
+### 5. Feedback to Developers
 
-- Your CI status badge immediately shows pass/fail
+  - Your CI status badge immediately shows pass/fail
 
-- Developers can click through the HTML report to see exactly which step or network call failed, plus a screenshot
+  - Developers can click through the HTML report to see exactly which step or network call failed, plus a screenshot
 
 ## Example (GitHub Actions)
 ```yaml
@@ -187,4 +187,4 @@ jobs:
 ```
 With this in place, every PR will automatically spin up your mock‑server and app, execute the CodeceptJS/Playwright scenarios, and give you a pass/fail signal (plus rich HTML + screenshots) right in your pull‑request checks.
 
-# That’s it! You now have a simple, network‑aware E2E suite you can run locally or in CI. Happy testing!
+### That’s it! You now have a simple, network‑aware E2E suite you can run locally or in CI. Happy testing!
