@@ -1,5 +1,5 @@
 # Feature Flags Admin Tool – Bug Report
-**Date:** July 11, 2025  
+**Date:** July 17, 2025  
 **Author:** Mia Armstrong  
 **Application Version:** QA Engineering Evaluation Project  
 **Environment:** Local (localhost:5173 / mock-api on localhost:4000)
@@ -84,14 +84,14 @@ The mock API contains logic (`getRandomValueForFlag`) that would return number a
 Using the “Hide All” button in the Show Columns dialog leaves user with no visible columns and no recovery path.
 
 **Steps to Reproduce:**
-1. Open kebab menu for Key/Flag table.
+1. Open kebab menu for Key/Flag table or Org ID column
 2. Select “Show Columns”
 3. Click “Hide All”
 4. Exit the dialog
 
 **Actual Behavior:**  
 - All columns disappear
-- There’s no way to restore them unless user refreshes or switches orgs. 
+- There’s no way to restore them unless user refreshes the page. 
 ![No visible columns after using Hide All](./screenshots/bug4-hide-all-columns.png)
 
 **Expected Behavior:**  
